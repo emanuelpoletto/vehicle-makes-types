@@ -1,0 +1,31 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Make {
+  makeId: Float!
+  makeName: String!
+  vehicleTypes: [VehicleType!]
+}
+
+type MakesResponse {
+  makes: [Make!]!
+  pagination: Pagination!
+}
+
+type Pagination {
+  count: Float!
+  skip: Float!
+  take: Float!
+}
+
+type Query {
+  getMake(id: Int!): Make!
+  getMakes(skip: Int, take: Int): MakesResponse!
+}
+
+type VehicleType {
+  makes: [Make!]
+  typeId: Float!
+  typeName: String!
+}
